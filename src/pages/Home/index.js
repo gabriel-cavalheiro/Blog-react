@@ -12,7 +12,10 @@ import api from 'services/api';
 
 //HOOKS
 import { useState, useEffect } from 'react';
+import { Header } from 'pages/Header';
+import { Footer } from 'pages/Footer';
 
+//Link
 
 export const Home = () => {
 
@@ -45,6 +48,9 @@ export const Home = () => {
 
     return (
         <>
+
+        <Header />
+
             <Hero />
             
                 <section className="container">
@@ -82,16 +88,23 @@ export const Home = () => {
 
                     <div className="row mt-4">
                         
-                        <Card />
-
-                        <Card />
-                        
-                        <Card />
+                        {
+                            mostseen.map((item) => {
+                                return <Card key={item.id} content={item} />
+                            })
+                        }
                         
                     </div>
             </section>
 
-            <Banner />
+            {
+                banner.map((item) => {
+                    return <Banner key={item.id} content={item} />
+                })                   
+            }
+
+            <Footer />
+            
         </>
     );
 }

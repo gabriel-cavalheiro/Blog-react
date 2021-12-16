@@ -1,5 +1,8 @@
 import blog from '../../../svg/blog.svg';
 
+//Link
+import { Link } from 'react-router-dom';
+
 export const Hero = () => {
     return(
         <>
@@ -12,7 +15,7 @@ export const Hero = () => {
                         Comentar. Contribuir. Aprender.
                         Conectar.
                     </p>
-                    <a href="#" className="btn mt-4">Começar a escrever</a>
+                    <Link to="/login" className="btn mt-4">Começar a escrever</Link>
                 </div>
                 <div className="grid-6">
                     <img src={blog} alt="ilustração do blog" />

@@ -1,14 +1,13 @@
-import { Header } from 'pages/Header';
-import { Home } from './pages/Home/index';
-import { Footer } from './pages/Footer/index';
+
+import { Paths } from 'paths';
 
 function App() {
   return (
-    <>
-    <Header />
-    <Home />
-    <Footer />
-    </>
+      <>
+      
+        <Paths />
+
+      </>
   );
 }
 

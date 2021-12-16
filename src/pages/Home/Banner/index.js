@@ -1,26 +1,26 @@
-import img02 from '../../../img/02.png'
+//Link
+import { Link } from "react-router-dom";
 
-export const Banner = () => {
+export const Banner = ( {content}) => {
     return(
         <>
 
             <section className="container">
                 <div className="img-banner hidden flex-center">
-                    <img src={img02} alt="imagem do banner" />
+                    <img src={content.imageUrl} alt="imagem do banner" />
                 </div>
                 <div className="row mt-3">
-                    <h6 className="color-gray text-center">01 de novembro de 2021</h6>
-                    <h6 className="uppercase color-primary text-center">tecnologia</h6>
+                    <h6 className="color-gray text-center">{content.date}</h6>
+                    <h6 className="uppercase color-primary text-center">{content.category}</h6>
 
-                    <h3 className="text-center">O que esperar do cinema em 2021?</h3>
-                    <p className="mt-1 text-center">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Corrupti, magnam! Qui magni animi quia sequi quisquam esse
-                        corrupti incidunt commodi eum voluptate, hic adipisci iure
-                        sed, modi dolorum enim maxime.
+                    <Link to={"/post/" + content.id}> 
+                    <h3 className="text-center">{content.title}</h3>
+                    </Link>
+                    <p className="my-2 text-center">
+                        {content.resume}
                     </p>
                     <div className="my-3 flex-center">
-                        <a href="#" className="link color-primary ">Ler mais</a>
+                        <Link to={"/post/" + content.id} className="link color-primary ">Ler mais</Link>
                     </div>
                 </div>
             </section>
